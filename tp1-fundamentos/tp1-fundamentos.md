@@ -1,7 +1,5 @@
 # Ejercicio 1
 
-## Introducción
-El Capítulo 26 del libro **"Artificial Intelligence: A Modern Approach (3rd Edition)"** aborda las cuestiones filosóficas fundamentales relacionadas con la inteligencia artificial (IA). La discusión se centra en la naturaleza de la mente, la posibilidad de que las máquinas puedan pensar o tener conciencia, y las implicaciones éticas y morales de la creación de sistemas inteligentes. En este contexto, se distingue entre la Inteligencia Artificial débil y la Inteligencia Artificial fuerte, dos enfoques que tienen implicaciones filosóficas y prácticas muy diferentes. Además, se analizan los riesgos y desafíos éticos asociados con el desarrollo de la IA.
 
 ## 1. Inteligencia Artificial débil
 
