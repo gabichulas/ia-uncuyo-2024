@@ -14,8 +14,7 @@ class Environment:
         matrix = matrix.reshape(self.sizeX,self.sizeY)
         return matrix
     
-    def is_dirty(self,posX,posY):
-        return self.matrix[posX,posY]
+    def is_dirty(self,posX,posY): return self.matrix[posX,posY]
     
     def get_performance(self):
         return (int(self.sizeX * self.sizeY * self.dirt_rate) - np.count_nonzero(self.matrix))/int(self.sizeX * self.sizeY * self.dirt_rate)

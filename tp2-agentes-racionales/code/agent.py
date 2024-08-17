@@ -32,7 +32,7 @@ class Agent(ABC):
     def idle(self):
         pass
 
-    def stop(self):
+    def die(self):
         return True if self.lives == 0 else False
 
     @abstractmethod
