@@ -13,17 +13,21 @@ class Agent(ABC):
     def up(self):
         if self.env.accept_action("Arriba",self.posX,self.posY):
             self.posX += 1
+            self.lives -= 1
     
     def down(self):
         if self.env.accept_action("Abajo",self.posX,self.posY):
             self.posX -= 1
+            self.lives -= 1
 
     def right(self):
         if self.env.accept_action("Derecha",self.posX,self.posY):
             self.posY += 1
+            self.lives -= 1
     def left(self):
         if self.env.accept_action("Izquierda",self.posX,self.posY):
             self.posY -= 1
+            self.lives -= 1
     
     def clean(self):
         if self.env.accept_action("Limpiar",self.posX,self.posY):
@@ -34,7 +38,18 @@ class Agent(ABC):
 
     def die(self):
         return True if self.lives == 0 else False
+    def verify_adj(self):
+        adj = [
+            (self.posX - 1, self.posY),  
+            (self.posX + 1, self.posY),  
+            (self.posX, self.posY - 1),  
+            (self.posX, self.posY + 1)   
+        ]
 
+        for (x, y) in adj:
+            if self.env.is_dirty(x, y):
+                return (x, y)
+        return None
     @abstractmethod
     def think(self):
         return

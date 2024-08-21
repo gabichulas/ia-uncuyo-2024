@@ -14,10 +14,13 @@ class Environment:
         matrix = matrix.reshape(self.sizeX,self.sizeY)
         return matrix
     
-    def is_dirty(self,posX,posY): return self.matrix[posX,posY]
+    def is_dirty(self, posX, posY):
+        if 0 <= posX < self.sizeX and 0 <= posY < self.sizeY:
+            return self.matrix[posX, posY]
+        return False
     
     def get_performance(self):
-        return (int(self.sizeX * self.sizeY * self.dirt_rate) - np.count_nonzero(self.matrix))/int(self.sizeX * self.sizeY * self.dirt_rate)
+        return ((self.sizeX * self.sizeY * self.dirt_rate) - np.count_nonzero(self.matrix))/(self.sizeX * self.sizeY * self.dirt_rate)
     
     def accept_action(self,action,x,y):
         if action == "Arriba":
@@ -51,5 +54,3 @@ class Environment:
 
     def print_environment(self): print(self.matrix)
 
-env = env = Environment(5, 5, 0, 0, 0.2, 0, 0)
-env.print_environment()
