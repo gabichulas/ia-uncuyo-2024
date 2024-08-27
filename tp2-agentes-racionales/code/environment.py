@@ -1,13 +1,15 @@
 import numpy as np
 
 class Environment:
-    def __init__(self,sizeX,sizeY,dirt_rate):
+    def __init__(self,sizeX,sizeY,dirt_rate,seed):
         self.sizeX = sizeX
         self.sizeY = sizeY
         self.dirt_rate = dirt_rate
+        self.seed = seed
         self.matrix = self.make_it_dirty()
 
     def make_it_dirty(self):
+        np.random.seed(self.seed)
         matrix = np.zeros(self.sizeX*self.sizeY, dtype=int)
         dirty_amount = int(self.sizeX * self.sizeY * self.dirt_rate)
         matrix[np.random.choice(self.sizeX*self.sizeY, dirty_amount, replace=False)] = 1
