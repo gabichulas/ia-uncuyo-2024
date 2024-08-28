@@ -96,7 +96,7 @@ $$
 
 
 
-A continuación, veremos gráficamente los resultados de las simulaciones. Los resultados en forma de tabla para el [agente reflexivo simple]([ia-uncuyo-2024/tp2-agentes-racionales/ref_agent_results.csv at main · gabichulas/ia-uncuyo-2024 · GitHub](https://github.com/gabichulas/ia-uncuyo-2024/blob/main/tp2-agentes-racionales/ref_agent_results.csv)) y el [aleatorio]([ia-uncuyo-2024/tp2-agentes-racionales/rand_agent_results.csv at main · gabichulas/ia-uncuyo-2024 · GitHub](https://github.com/gabichulas/ia-uncuyo-2024/blob/main/tp2-agentes-racionales/rand_agent_results.csv)) pueden ser visualizados en su totalidad en los enlaces provistos.
+A continuación, veremos gráficamente los resultados de las simulaciones. Los resultados en forma de tabla para el [agente reflexivo simple](https://github.com/gabichulas/ia-uncuyo-2024/blob/main/tp2-agentes-racionales/ref_agent_results.csv) y el [aleatorio](https://github.com/gabichulas/ia-uncuyo-2024/blob/main/tp2-agentes-racionales/rand_agent_results.csv) pueden ser visualizados en su totalidad en los enlaces provistos.
 
 
 
@@ -104,9 +104,9 @@ Primeramente, veremos una comparación entre ciertos resultados, tomando como va
 
 
 
-![Gráfico de barras agente reflexivo simple en 8x8](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RefAgent_barplot_size_8x8.png)
+![Gráfico de barras agente reflexivo simple en 8x8](images/RefAgent_barplot_size_8x8.png)
 
-![Gráfico agente aleatorio 8x8](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RandAgent_barplot_size_8x8.png)
+![Gráfico agente aleatorio 8x8](images/RandAgent_barplot_size_8x8.png)
 
 
 
@@ -114,9 +114,9 @@ En este caso, los resultados son idénticos. En la gran mayoría de casos, para 
 
 
 
-![Gráfico agente reflexivo simple 32x32](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RefAgent_barplot_size_32x32.png)
+![Gráfico agente reflexivo simple 32x32](images/RefAgent_barplot_size_32x32.png)
 
-![Gráfico agente aleatorio 32x32](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RandAgent_barplot_size_32x32.png)
+![Gráfico agente aleatorio 32x32](images/RandAgent_barplot_size_32x32.png)
 
 
 
@@ -130,9 +130,9 @@ A continuación, veremos los gráficos para el entorno mas grande, 128x128, nota
 
 
 
-![Gráfico agente reflexivo simple 128x128](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RefAgent_barplot_size_128x128.png)
+![Gráfico agente reflexivo simple 128x128](images/RefAgent_barplot_size_128x128.png)
 
-![Gráfico agente aleatorio 128x128](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RandAgent_barplot_size_128x128.png)
+![Gráfico agente aleatorio 128x128](images/RandAgent_barplot_size_128x128.png)
 
 
 
@@ -140,9 +140,9 @@ Para concluir con los gráficos, veremos gráficamente de qué manera se dispers
 
 
 
-![Gráfico de caja agente reflexivo simple 0.1](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RefAgent_boxplot_dirt_rate_0.1.png)
+![Gráfico de caja agente reflexivo simple 0.1](images/RefAgent_boxplot_dirt_rate_0.1.png)
 
-![Gráfico de caja agente aleatorio 0.1](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RandAgent_boxplot_dirt_rate_0.1.png)
+![Gráfico de caja agente aleatorio 0.1](images/RandAgent_boxplot_dirt_rate_0.1.png)
 
 
 
@@ -156,17 +156,17 @@ A continuación veremos algunos gráficos más, en el que observaremos los mismo
 
 
 
-![Gráfico de caja agente reflexivo simple 0.4](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RefAgent_boxplot_dirt_rate_0.4.png)
+![Gráfico de caja agente reflexivo simple 0.4](images/RefAgent_boxplot_dirt_rate_0.4.png)
 
-![Gráfico de caja agente aleatorio 0.4](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RandAgent_boxplot_dirt_rate_0.4.png)
-
-
+![Gráfico de caja agente aleatorio 0.4](images/RandAgent_boxplot_dirt_rate_0.4.png)
 
 
 
-![Gráfico de caja agente reflexivo simple 0.8](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RefAgent_boxplot_dirt_rate_0.8.png)
 
-![Gráfico de caja agente aleatorio 0.8](/home/gabriel/Documentos/projects/ia-uncuyo-2024/tp2-agentes-racionales/images/RandAgent_boxplot_dirt_rate_0.8.png)
+
+![Gráfico de caja agente reflexivo simple 0.8](images/RefAgent_boxplot_dirt_rate_0.8.png)
+
+![Gráfico de caja agente aleatorio 0.8](images/RandAgent_boxplot_dirt_rate_0.8.png)
 
 
 
