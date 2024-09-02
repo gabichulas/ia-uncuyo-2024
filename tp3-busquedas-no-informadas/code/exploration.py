@@ -16,6 +16,7 @@ print("Posici´on inicial del agente:", state[0])
 done = truncated = False
 while not (done or truncated):
     action = env.action_space.sample() # Acci´on aleatoria
+    print(type(action))
     next_state, reward, done, truncated, _ = env.step(action)
     print(f"Acci´on: {action}, Nuevo estado: {next_state}, Recompensa: {reward}")
     print(f"¿Gan´o? (encontr´o el objetivo): {done}")
