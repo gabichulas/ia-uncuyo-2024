@@ -4,24 +4,7 @@ from gymnasium import wrappers
 import random
 import time
 
-nuevo_limite = 3
-env = gym.make('FrozenLake-v1', render_mode='human')
-env = wrappers.TimeLimit(env, nuevo_limite)
 
-print("Numero de estados:", env.observation_space.n)
-print("Numero de acciones:", env.action_space.n)
-
-state = env.reset()
-print("Posici´on inicial del agente:", state[0])
-done = truncated = False
-while not (done or truncated):
-    action = env.action_space.sample() # Acci´on aleatoria
-    print(type(action))
-    next_state, reward, done, truncated, _ = env.step(action)
-    print(f"Acci´on: {action}, Nuevo estado: {next_state}, Recompensa: {reward}")
-    print(f"¿Gan´o? (encontr´o el objetivo): {done}")
-    print(f"¿Fren´o? (alcanz´o el m´aximo de pasos posible): {truncated}\n")
-    state = next_state
 
 def generate_random_map_custom(size, hprob):
     # Crear una matriz de tamaño 'size' x 'size' con caracteres "A"
@@ -51,5 +34,5 @@ def generate_random_map_custom(size, hprob):
         desc[i] = "".join(desc[i])
     
     env = gym.make('FrozenLake-v1', desc=desc, render_mode='human')
-    return env
+    return env, desc
 
