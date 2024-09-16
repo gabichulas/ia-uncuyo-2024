@@ -1,6 +1,6 @@
-import gymnasium as gym
-from gymnasium.envs.toy_text.frozen_lake import generate_random_map
-from gymnasium import wrappers
+import gymnasium as gym # type: ignore
+from gymnasium.envs.toy_text.frozen_lake import generate_random_map # type: ignore
+from gymnasium import wrappers # type: ignore
 import random
 import time
 

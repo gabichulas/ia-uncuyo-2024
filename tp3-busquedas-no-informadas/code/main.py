@@ -1,6 +1,6 @@
 from search import *
 import pandas as pd
-import seaborn as sns
+import seaborn as sns # type: ignore
 import matplotlib.pyplot as plt
 
 def generate_envs(it):
