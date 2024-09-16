@@ -76,7 +76,8 @@ def dfs(desc, start):
                 frontier.append((n, path + [position]))
     return None, explored
 
-def dls(desc, start, limit):
+def dls(desc, start):
+    limit = 10
     frontier = [(start, [], 0)]
     explored = set()
 
@@ -115,7 +116,7 @@ def ucs1(desc, start):
         for n in neighbors(position, desc):
             if n not in explored and desc[n[0]][n[1]] != "H":
                 frontier.put((cost + 1, n, path + [position]))
-    return None, explored, None
+    return None, explored, 0
 
 def ucs2(desc, start):
     frontier = PriorityQueue()
@@ -140,7 +141,7 @@ def ucs2(desc, start):
             if (n not in explored or newCost < accCost.get(n, float('inf'))) and desc[n[0]][n[1]] != "H":
                 accCost[n] = newCost
                 frontier.put((newCost, n, path + [position]))
-    return None, explored, None
+    return None, explored, 0
 
 env, desc = generate_random_map_custom(8, 0.3)
 start_state = env.reset()[0]
