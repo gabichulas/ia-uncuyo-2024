@@ -17,7 +17,7 @@ def generate_envs(it):
 
 def run_experiments(it):
     results = []
-    functions = [bfs, dfs, dls, ucs1, ucs2]
+    functions = [bfs, dfs, dls, ucs1, ucs2, rand]
     envs = generate_envs(it)
 
     for func in functions:

@@ -1,6 +1,7 @@
 from exploration import generate_random_map_custom
 from queue import PriorityQueue
 import time
+import random
 
 def neighbors(position, desc):
     neighbors = []
@@ -143,16 +144,28 @@ def ucs2(desc, start):
                 frontier.put((newCost, n, path + [position]))
     return None, explored, 0
 
-env, desc = generate_random_map_custom(8, 0.3)
-start_state = env.reset()[0]
-time.sleep(10)
-for i in range(len(desc)):
-    for j in range(len(desc[i])):
-        if desc[i][j] == 'S':  
-            start_position = (i, j)
+def rand(desc, start):
+    lifes = 100
+    current_position = start
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]  
+    path = [current_position]
+    explored = set()
+    explored.add(current_position)
+    
+    while lifes > 0:
+        move = random.choice(directions)
+        new_position = (current_position[0] + move[0], current_position[1] + move[1])
+        
+        if 0 <= new_position[0] < len(desc) and 0 <= new_position[1] < len(desc[0]):
+            current_position = new_position
+            path.append(current_position)
+            explored.add(current_position)
+            
+            if desc[current_position[0]][current_position[1]] == 'G':
+                return path, explored
+        
+        lifes -= 1
+    
+    return None, explored
 
 
-path, explored, total_cost = ucs2(desc, start_position)
-print("Camino encontrado:", path)
-print("Nodos explorados:", explored)
-print("Costo total:", total_cost)
