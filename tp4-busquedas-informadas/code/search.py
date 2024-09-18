@@ -166,4 +166,30 @@ def rand(desc, start):
     
     return None, explored
 
+def h(n, goal): return abs(n[0] - goal[0]) + abs(n[1] - goal[1]) # Heuristica: Distancia Manhattan
 
+def a_star(desc, start, goal):
+    frontier = PriorityQueue()
+    frontier.put((0, start, [start], 0))  # (priority, current_node, path, cost)
+    explored = set()
+    accCost = {start: 0}
+
+    while not frontier.empty():
+        _, current, path, current_cost = frontier.get()
+        
+        if current == goal: return path, explored, current_cost
+        
+        if current in explored: continue
+        
+        explored.add(current)
+        
+        neighbors, costs = neighborsWithCost(current, desc)
+
+        for neighbor, cost in zip(neighbors, costs):
+            new_cost = current_cost + cost
+            if (neighbor not in explored or new_cost < accCost.get(neighbor, float('inf'))) and desc[neighbor[0]][neighbor[1]] != "H":
+                accCost[neighbor] = new_cost
+                priority = new_cost + h(neighbor, goal)
+                frontier.put((priority, neighbor, path + [neighbor], new_cost))
+
+    return None, explored, 0

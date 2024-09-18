@@ -1,9 +1,40 @@
+import random
+import gymnasium as gym #type: ignore
 from search import *
 import time
 import pandas as pd
 import seaborn as sns # type: ignore
 import matplotlib.pyplot as plt
-from exploration import generate_random_map_custom
+
+def generate_random_map_custom(size, hprob):
+    # Crear una matriz de tamaño 'size' x 'size' con caracteres "A"
+    desc = [["A" for _ in range(size)] for _ in range(size)]
+    agent_done = False
+    end_done = False
+    
+    for i in range(size):
+        for j in range(size):
+            if random.random() < hprob:
+                desc[i][j] = "H"
+            else:
+                desc[i][j] = "F"
+
+    if not agent_done:
+        agent_x = random.randint(0, size - 1)
+        agent_y = random.randint(0, size - 1)
+        desc[agent_x][agent_y] = "S"
+        agent_done = True
+    
+    if not end_done:
+        desc[size-1][size-1] = "G"
+        end_done = True
+
+    # Convertir cada sublista en una cadena
+    for i in range(size):
+        desc[i] = "".join(desc[i])
+    
+    env = gym.make('FrozenLake-v1', desc=desc, render_mode='human')
+    return env, desc
 
 def generate_envs(it):
     envs = []
@@ -13,13 +44,17 @@ def generate_envs(it):
                 for j in range(len(desc[i])):
                     if desc[i][j] == 'S':  
                         start_position = (i, j)
-        envs.append((desc,start_position))
+        for k in range(len(desc)):
+                for l in range(len(desc[k])):
+                    if desc[k][l] == 'G':  
+                        goal = (k, l)
+        envs.append((desc,start_position, goal))
     return envs
 
 
 def run_experiments(it):
     results = []
-    functions = [bfs, dfs, dls, ucs1, ucs2, rand]
+    functions = [bfs, dfs, dls, ucs1, ucs2, rand, a_star]
     envs = generate_envs(it)
 
     for func in functions:
@@ -28,7 +63,10 @@ def run_experiments(it):
             start_position = env[1]
 
             start = time.time()
-            result = func(desc, start_position)
+            if func.__name__ != 'a_star':
+                result = func(desc, start_position)
+            else:
+                result = func(desc, start_position, env[2])
             end = time.time()
 
             final_time = end - start
@@ -62,7 +100,7 @@ def run_experiments(it):
             })
     
     df = pd.DataFrame(results)
-    df.to_csv('no-informada-results.csv', index=False)
+    df.to_csv('informada-results.csv', index=False)
     return df
 
 def calculate_n_plot(df):
