@@ -89,5 +89,57 @@ def plot():
         plt.xlabel('Size')
         plt.ylabel('Generations')
         plt.savefig(f'images/{algorithm}_generations_boxplot.png')
+    
+    ### h() a traves de una ejecución
+
+    while True:
+        _, _, _, _, h_list_hc = hill_climbing_with_tracking(8)
+        print('Running HC...')
+        if h_list_hc[-1] == 0:
+            print('Solution found!')
+            break
+        print(f'Solution not found, value found: {h_list_hc[-1]}')
+
+    while True:
+        _, _, _, _, h_list_sa = simulated_annealing_with_tracking(8)
+        print('Running SA...')
+        if h_list_sa[-1] == 0:
+            print('Solution found!')
+            break
+        print(f'Solution not found, value found: {h_list_sa[-1]}')
+
+    while True:
+        _, _, _, _, h_list_gen1 = genetic_with_tracking(8)
+        print('Running G1...')
+        if h_list_gen1[-1] == 0:
+            print('Solution found!')
+            break
+        print(f'Solution not found, value found: {h_list_gen1[-1]}')
+
+    while True:
+        _, _, _, _, h_list_gen2 = genetic2_with_tracking(8)
+        print('Running G2...')
+        if h_list_gen2[-1] == 0:
+            print('Solution found!')
+            break
+        print(f'Solution not found, value found: {h_list_gen2[-1]}')
+
+    lists = {
+    "h_list_hc": h_list_hc,
+    "h_list_sa": h_list_sa,
+    "h_list_gen1": h_list_gen1,
+    "h_list_gen2": h_list_gen2
+    }
+
+    for name, lst in lists.items():
+        plt.figure(figsize=(10,6))
+        sns.lineplot(data=lst)
+        plt.title(f'Variation of Heuristic Value Through Iterations: {name}')
+        plt.ylabel('h()')
+        plt.savefig(f'images/{name}_lineplot')
+        plt.close()
+    
+    print('Finished! :)')
+
 
 plot()
