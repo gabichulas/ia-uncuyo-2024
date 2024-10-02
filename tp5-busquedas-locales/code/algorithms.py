@@ -28,7 +28,7 @@ def get_neighbors(board):
 
 # Hill Climbing
 
-def hill_climbing(n, max_iterations=1000):
+def hill_climbing(n, max_iterations = 1000):
     current_board = init_board(n)
     current_conflicts = h(current_board)
     states_explored = 0
@@ -67,7 +67,7 @@ def prob(delta_e, t):
     else:
         return math.exp(-delta_e / t)
 
-def simulated_annealing(n, max_iterations=1000):
+def simulated_annealing(n, max_iterations = 1000):
     initial_temperature = 1000
     final_temperature = 1
     cooling_rate = 0.99  
@@ -96,4 +96,78 @@ def simulated_annealing(n, max_iterations=1000):
     final_time = end - start
 
     return current_board, states_explored, final_time, h(current_board)
+
+# GA
+
+def fitness(board): return -h(board)
+
+def select(population, fitnesses):
+    total_fitness = sum(fitnesses)
+    probabilities = [f / total_fitness for f in fitnesses]
+    return population[np.random.choice(len(population), p=probabilities)]
+
+def crossover(parent1, parent2):
+    n = len(parent1)
+    crossover_point = random.randint(0, n-1)
+    child = parent1[:crossover_point] + parent2[crossover_point:]
+    return child
+
+def mutate(board, mutation_rate = 0.1):
+    n = len(board)
+    for i in range(n):
+        if random.random() < mutation_rate:
+            board[i] = random.randint(0, n-1)
+    return board
+
+def genetic(n, population_size = 100, generations = 1000, mutation_rate = 0.1):
+    population = [init_board(n) for _ in range(population_size)]
+    fitnesses = [fitness(board) for board in population]
+    best = max(population, key=fitness)
+    if h(best) == 0: return best, 1, 0, h(best)
+
+    start = time.time()
+
+    for i in range(generations):
+        new_population = []
+        for _ in range(population_size):
+            parent_1 = select(population, fitnesses)
+            parent_2 = select(population, fitnesses)
+            child = crossover(parent_1, parent_2)
+            child = mutate(child, mutation_rate)
+            new_population.append(child)
+
+        best = max(new_population, key=fitness)
+        if h(best) == 0: break
+
+        new_population.sort(key=fitness, reverse=True)
+        top_25 = new_population[:int(0.15 * population_size)]
+        population = top_25 + [init_board(n) for _ in range(population_size - len(top_25))]  
+
+    end = time.time()
+    final_time = end - start
+
+
+    return best, i + 1, final_time, h(best)
+
+def genetic2(n, population_size = 100, generations = 1000, mutation_rate = 0.1):
+    population = [init_board(n) for _ in range(population_size)]
+    start = time.time()
+    for generation in range(generations):
+        fitnesses = [fitness(board) for board in population]
+        new_population = []
+
+        for _ in range(population_size):
+            parent1 = select(population, fitnesses)
+            parent2 = select(population, fitnesses)
+            child = crossover(parent1, parent2)
+            child = mutate(child, mutation_rate)
+            new_population.append(child)
+        population = new_population
+        best_board = max(population, key=fitness)
+        if h(best_board) == 0:
+            break
+    
+    end = time.time()
+    final_time = end - start
+    return best_board, generation, final_time, h(best_board)
 
