@@ -6,7 +6,6 @@ Se nos plantea que, dados dos tipos de entornos (que serán descritos más adela
 
 # Marco teórico
 
-
 ### Entornos
 
 Como se mencionó previamente, tenemos dos tipos de entornos posibles:
