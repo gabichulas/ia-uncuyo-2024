@@ -65,3 +65,20 @@ En cada iteración, se remueve un arco de la lista y se verifica la consistencia
    - Dado que el dominio de $NSW$ está vacío, el algoritmo determina que no hay solución posible para el problema.
 
 El proceso concluye al encontrarse con una variable ($NSW$) que queda sin valores posibles, lo que indica que no es posible asignar colores a todas las regiones de forma que se cumplan las restricciones de adyacencia. Por lo tanto, el algoritmo devuelve `falso`.
+
+---
+
+# Ejercicio 3
+
+La complejidad en este caso es de $O(ad^2)$, siendo $a$ = número de arcos y $d$ = tamaño máximo de los dominios de las variables. Esto se debe a que al no haber ciclos en el grafo se facilita mucho el recorrido del algoritmo.
+
+---
+
+# Ejercicio 4
+
+Al utilizar contadores para cada arco $(X_k,X_i)$, que registran cuántos valores de $X_i$ son consistentes con cada valor de $X_k$​, se puede actualizar estos contadores de manera eficiente cuando se elimina un valor de $X_i$​. Si un contador llega a cero, el valor correspondiente de $X_k$ se elimina y solo así el arco se reinserta en la cola, evitando revisiones innecesarias. Esto permite que el algoritmo planteado logre la arco-consistencia en un tiempo total de $O(n^2d^2)$, ya que reduce el número de revisiones a lo mínimo indispensable.
+
+---
+
+# Ejercicio 5
+
