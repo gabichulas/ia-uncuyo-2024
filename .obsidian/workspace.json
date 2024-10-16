@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tp6-csp/tp6-reporte.md",
+                "file": "tp7-intro-ml/tp7-reporte.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "tp6-csp/tp6-reporte.md",
+                "file": "tp7-intro-ml/tp7-reporte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "tp6-csp/tp6-reporte.md",
+                "file": "tp7-intro-ml/tp7-reporte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tp6-csp/tp6-reporte.md"
+                "file": "tp7-intro-ml/tp7-reporte.md"
               }
             }
           }
@@ -148,8 +148,11 @@
   },
   "active": "7555491ab74d5aec",
   "lastOpenFiles": [
-    "tp5-busquedas-locales/tp5-reporte.md",
     "tp6-csp/tp6-reporte.md",
+    "tp7-intro-ml/tp7-reporte.md",
+    "tp7-intro-ml/images",
+    "tp7-intro-ml/images/Pasted image 20241016112446.png",
+    "tp5-busquedas-locales/tp5-reporte.md",
     "tp6-csp",
     "tp5-busquedas-locales/images/success_rate.png",
     "tp5-busquedas-locales/images/simulated_annealing_generations_boxplot.png",
