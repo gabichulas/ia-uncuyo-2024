@@ -22,3 +22,10 @@ Aunque el gráfico no sea tan claro, podemos observar que el árbol "**Morera**"
 
 ## Ejercicio 3
 
+### Incisos A y B
+
+Las imágenes son *demasiadas*, por lo que se pueden visualizar en las correspondientes carpetas.
+
+
+
+
