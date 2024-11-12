@@ -82,3 +82,33 @@ Al utilizar contadores para cada arco $(X_k,X_i)$, que registran cuántos valore
 
 # Ejercicio 5
 
+La 2-consistencia asegura que para cada par de variables conectadas por una restricción, cada valor de una variable tiene al menos un valor compatible en la otra.
+
+En un árbol, la ausencia de ciclos significa que una vez asignados los valores a las variables, no habrá inconsistencias cíclicas. Si una variable es consistente con su vecino (nodo hijo), esa consistencia no se verá afectada por asignaciones posteriores.
+
+Para demostrar la n-consistencia en un árbol, elegimos un nodo "raíz" y aplicamos la 2-consistencia en cada nodo durante un recorrido descendente. Esto garantiza que cualquier valor asignado a una variable tendrá al menos un valor compatible en sus nodos hijos. Dado que no hay ciclos, las asignaciones en otros subárboles no interferirán con las consistencias establecidas. Por lo tanto, la 2-consistencia es suficiente para asegurar la n-consistencia en un CSP basado en árboles.
+
+# Ejercicios 6 y 7
+
+Luego de las simulaciones solicitadas, podemos observar lo siguiente:
+
+![Figura 1](images/exec_time_boxplot.png)
+
+Este gráfico nos indica que Forward Checking fue ampliamente superior a Backtracking. Esto podemos verlo, fundamentalmente, en la diferencia entre los resultados de ambos algoritmos, pero también en la diferencia de tiempo de ejecución entre tableros con 8 y 10 reinas de cada uno de ellos, destacando que, también, FC es mucho mejor.
+
+![Figura 2](images/states_boxplot.png)
+
+Aquí tenemos un caso muy similar, donde, de hecho, en las resoluciones de Forward Cheking se recorrieron, en promedio, más estados para 8 reinas que para 10.
+
+De nuevo, Forward Checking es muchísimo mas eficiente.
+
+Ahora, compararemos nuestros resultados con Hill Climbing y Simulated Annealing:
+
+![Figura 3](../tp5-busquedas-locales/images/hill_climbing_time_boxplot.png)
+![Figura 4](../tp5-busquedas-locales/images/simulated_annealing_time_boxplot.png)
+
+En cuanto a tiempo de ejecución vemos una mejora considerable de parte de los algoritmos vistos en este tp. También podemos observar una menor dispersión en nuestras cajas. Esto indica que las nuevas soluciones son mucho mejores.
+
+# Conclusión
+
+Ambas implementaciones de CSP (Backtracking y Forward Checking) fueron ampliamente mejores que las vistas en el anterior tp, pero nuestra principal conclusión es que hay un claro ganador: Forward Checking. Fue mucho más rápido que el resto, y hasta tuvo mejores resultados, comparando con los suyos, con n más grandes, lo cual no es habitual, pero dependiendo el caso puede ser muy beneficioso.
