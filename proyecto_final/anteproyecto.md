@@ -124,6 +124,18 @@ soluciones mas precisas , ya que podria adaptarse a las horas de maxima congesti
 
 #### Total de dias estimados : 29 dias
 
+### Representación visual:
+
+| Actividad                                    | Duración | Inicio | Día 1 | Día 2 | Día 3 | Día 4 | Día 5 | Día 6 | Día 7 | Día 8 | Día 9 | Día 10 | Día 11 | Día 12 | Día 13 | Día 14 | Día 15 | Día 16 | Día 17 | Día 18 | Día 19 | Día 20 | Día 21 | Día 22 | Día 23 | Día 24 | Día 25 | Día 26 | Día 27 | Día 28 | Día 29 |
+|----------------------------------------------|----------|--------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| Leer Bibliografía y estudiar conceptos       | 7 días   | Día 1  | █     | █     | █     | █     | █     | █     | █     |       |       |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| Preparación de datos de entrada              | 7 días   | Día 8  |       |       |       |       |       |       |       | █     | █     | █      | █      | █      | █      | █      |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+| Desarrollo del algoritmo evolutivo           | 5 días   | Día 15 |       |       |       |       |       |       |       |       |       |        |        |        |        |        | █      | █      | █      | █      | █      |        |        |        |        |        |        |        |        |        |
+| Pruebas y ajuste de parámetros               | 3 días   | Día 20 |       |       |       |       |       |       |       |       |       |        |        |        |        |        |        |        |        |        |        | █      | █      | █      |        |        |        |        |        |        |
+| Documentación y presentación de resultados   | 3 días   | Día 23 |       |       |       |       |       |       |       |       |       |        |        |        |        |        |        |        |        |        |        |        |        | █      | █      | █      |        |        |        |
+| Desarrollo de presentación e informe final   | 4 días   | Día 26 |       |       |       |       |       |       |       |       |       |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        | █      | █      | █      | █      |
+
+
 ## Bibliografía
 Introduction to Evolutionary Computing J.E. Smith.
 Capitulos : 7,8,12,13
