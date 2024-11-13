@@ -6,6 +6,9 @@
 ## Descripción
 Este proyecto tiene como objetivo el desarrollo de un algoritmo genético (AG) para optimizar las rutas de entrega dentro de un sistema logístico de heladerías. Se busca generar rutas eficientes teniendo en cuenta varios factores como la distancia, las ventanas de tiempo, la capacidad de los vehículos y el horario de circulacion del vehiculo.
 
+## Integrantes
+Giovanni Azurduy,
+Gabriel Lopez Romero
 
 
 ### Objetivos del Proyecto
@@ -27,8 +30,7 @@ El proyecto se enfocará en un conjunto de datos representativo de un sistema de
 
 ### Limitaciones
 - El algoritmo se evaluará solo en escenarios simulados.
-- La implementación no abordará variables externas como el tráfico en tiempo real.
-
+  
 ## Justificación
 Se emplea el uso de la programacion Evolutiva debido:
 1. **Exploración de un Gran Espacio de Soluciones**: El TSP, y más aún con restricciones, tiene un espacio de soluciones muy amplio. La programación evolutiva es útil para explorar múltiples rutas de forma paralela, buscando combinaciones óptimas de manera más efectiva que con métodos de optimización exacta.
@@ -89,6 +91,28 @@ Al ser multiobjetivo se llega a un punto donde una solucion no puede ser mejorar
 3. MOACO (Multi-Objective Ant Colony Optimization)
 
 en caso de no ser multiobjetivo se implementara ACO (Ant Colony Optimization)
+
+## Incorporacion Trafico (Deseable)
+A la hora de implementar el trafico, se haria de manera dinamica en base horarios (el trafico varia conrespecto a la hora situada), con la ayuda de alguna api de uso publico .
+
+Donde se puede emplear alguno de estos dos metodos para poder llevarlo acabo:
+
+1. **Modificar la Función de Fitness**: Al hacerlo, se puede incluir una penalización por tráfico que aumente el "costo" de rutas que pasen por zonas con alta congestión. Esto impactaria directamente en cómo el algoritmo evalúa cada ruta, penalizando las rutas con tráfico.
+
+Ventaja : es simple no agrega mas complejidad a la hora de realizar el algoritmo ya que lo agregamos como penalizacion. (Sea Objetivo o Multiobjetivo)
+
+Desventaja : penalizar la funcion fitness "puede" no llegar a influir lo suficiente en la genearcion de nuevas , dificultando la exploración de rutas alternativas menos congestionadas.
+
+2. **Incluir el Tráfico en el Algoritmo Genético**: Aquí se deberia ajustar los operadores genéticos para favorecer rutas que eviten las áreas de alta congestión. Por ejemplo, hacer que las mutaciones reduzcan la probabilidad de elegir rutas congestionadas o que el cruzamiento prefiera combinaciones de rutas menos afectadas por el tráfico.
+
+Ventaja : otorga flexibilidad a la hora de buscar rutas optimas
+
+Desventaja : Hay que modificar el algoritmo, incrementando la complejidad de este
+
+### Detalle a tener encuenta
+Ambas opciones aumentan la carga computacional pero de poder llevarse acabo tendriamos
+soluciones mas precisas , ya que podria adaptarse a las horas de maxima congestion (horas pico).
+
 
 ## Listado de actividades a realizar
 1. Leer Bibliografia y estudiar los conceptos de la resolucion de problemas multiobjetivo (7 dias)
